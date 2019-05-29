@@ -43,7 +43,6 @@
 </template>
 
 <script>
-import Choose from 'components/choose'
 
 export default {
   name: 'app',
