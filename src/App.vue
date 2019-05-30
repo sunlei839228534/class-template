@@ -1,9 +1,10 @@
 <template>
   <div id="app">
+  <div ref="header">
     <div class="banner-wrapper" v-for="(item,index) in headerImg" :key="index">
       <img :src=item.imgUrl alt="">
     </div>
-    <div class="course-wrapper">
+    <div class="course-wrapper" ref="course">
       <section class="grade-chooseing-wrapper">
         <div>
           <div class="course-title"></div>
@@ -34,20 +35,32 @@
         </ul>
       </section>
     </div>
+  </div>
     <div class="content">
       <div class="info" v-for="(item,index) in infoImg" :key="index">
         <img :src="item.imgUrl" alt="">
       </div>
     </div>
+    <div class="bottom" v-if="bottomShow">
+      <div class="footer-wrapper">
+        <div class="fixed-content"> 
+          <div class="footer-text">50元15节直播课</div>
+          <div @click="handlelogin" class="footer-btn">立即报名</div>
+        </div>
+      </div>
+    </div>
+    <Login></Login>
   </div>
 </template>
 
 <script>
+import Login from 'components/Login'
 
 export default {
   name: 'app',
   data() {
     return {
+      bottomShow: false,
       currentIndex: 0,
       month: "9",
       headerImg: [
@@ -118,12 +131,25 @@ export default {
     },
     handleClickPlan(plan) {
       alert(`你已成功购买${this.grade[this.currentIndex].class} ${plan.classdate} ${plan.classtime}的课程`)
+    },
+    handleScroll() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      this.bottomShow = scrollTop > this.$refs.header.clientHeight ? true : false
+    },
+    handlelogin() {
+      alert("点击报名!")
     }
   },
   computed: {
     currentClassPlan() {
       return this.grade[this.currentIndex].classPlan //使用computed属性渲染
     }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll,true)//添加scroll绑定事件
+  },
+  destroyed() {
+    window.removeEventListener('scroll',this.handleScroll) //移除绑定事件
   }
 }
 </script>
@@ -164,7 +190,7 @@ export default {
             background: #fff
             border: 1px solid #bfbfbf
             border-radius: .1rem
-            font-size: .28rem
+            font-size: .2rem
             color: #333
             text-align: center
             line-height: .8rem
@@ -203,4 +229,33 @@ export default {
           transform: scale(.5)
           text-align: center
           background: linear-gradient(90deg, #fc267b, #f51b73)
+    .bottom
+      position: fixed
+      z-index: 999
+      bottom: 0
+      width: 100%
+      .footer-wrapper
+        padding: 0 .5rem 0 .6rem
+        width: 100%
+        background: pink
+        box-sizing: border-box
+        font-size: .29rem
+        background: #fff
+        .fixed-content
+          width: 100%
+          height: 1rem
+          display: flex
+          justify-content: space-between
+          align-items: center
+          .footer-text
+            color: #000
+            line-height: 1rem
+          .footer-btn
+            width: 44.44%
+            height: .8rem
+            background: linear-gradient(90deg,#fc267b,#f51b73)
+            color: #fff
+            line-height: .8rem
+            text-align: center
+            border-radius: .4rem
 </style>
