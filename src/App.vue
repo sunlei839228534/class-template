@@ -44,12 +44,12 @@
     <div class="bottom" v-if="bottomShow">
       <div class="footer-wrapper">
         <div class="fixed-content"> 
-          <div class="footer-text">50元15节直播课</div>
+          <div class="footer-text">{{bottomText}}</div>
           <div @click="handlelogin" class="footer-btn">立即报名</div>
         </div>
       </div>
     </div>
-    <Login></Login>
+    <Login ref="confirm"></Login>
   </div>
 </template>
 
@@ -61,6 +61,7 @@ export default {
   data() {
     return {
       bottomShow: false,
+      bottomText: '50元15节课',
       currentIndex: 0,
       month: "9",
       headerImg: [
@@ -130,11 +131,12 @@ export default {
       this.currentIndex = i
     },
     handleClickPlan(plan) {
-      alert(`你已成功购买${this.grade[this.currentIndex].class} ${plan.classdate} ${plan.classtime}的课程`)
+      // alert(`你已成功购买${this.grade[this.currentIndex].class} ${plan.classdate} ${plan.classtime}的课程`)
+      this.$refs.confirm.show()
     },
     handleScroll() {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-      this.bottomShow = scrollTop > this.$refs.header.clientHeight ? true : false
+      this.bottomShow = scrollTop > this.$refs.header.clientHeight ? true : false 
     },
     handlelogin() {
       alert("点击报名!")
@@ -150,6 +152,9 @@ export default {
   },
   destroyed() {
     window.removeEventListener('scroll',this.handleScroll) //移除绑定事件
+  },
+  components: {
+    Login
   }
 }
 </script>
