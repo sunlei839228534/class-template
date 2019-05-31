@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {

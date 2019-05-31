@@ -5,9 +5,9 @@
       <div class="dialog-title">注册/登录</div>
       <div class="dialog-body">
         <form action="POST">
-          账号:<input type="text">
+          账号: <input type="text" style="border: 1px solid black">
           <br>
-          密码: <input type="password">
+          密码: <input type="password" style="border: 1px solid black">
         </form>
       </div>
       <div class="dialog-footer">
