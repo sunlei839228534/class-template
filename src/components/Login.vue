@@ -1,10 +1,17 @@
 <template>
   <div class="dialog" v-if="this.isShow" @click="hideShow">
     <div class="dialog-cover"></div>
-    <div class="dialog-content">
-      <div class="dialog-title">title</div>
-      <div class="dialog-body">denglu/zhuce</div>
-      <div class="dialog-footer">dianji</div>
+    <div class="dialog-content" @click.stop>
+      <div class="dialog-title">注册/登录</div>
+      <div class="dialog-body">
+        <form action="POST">
+          账号:<input type="text">
+          <br>
+          密码: <input type="password">
+        </form>
+      </div>
+      <div class="dialog-footer">
+      </div>
     </div>
   </div>
 </template>
@@ -31,7 +38,8 @@ export default {
 
 <style lang="stylus" scoped>
   .dialog
-    font-size: 32px
+    position relative
+    font-size: 16px
     .dialog-cover
       background: rgba(0,0,0,0.8)
       position: fixed 
