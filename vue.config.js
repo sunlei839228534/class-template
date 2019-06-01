@@ -10,5 +10,6 @@ module.exports = {
       .set('components', resolve('src/components'))
       .set('common', resolve('src/common'))
       .set('assets', resolve('src/assets'))
-  }
+  },
+  publicPath: './'
 }

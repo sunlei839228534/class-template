@@ -20,17 +20,22 @@
 export default {
   data() {
     return {
+      top: null,
       isShow: false
     }
   },
   methods: {
     show() {
-      document.body.style.position = "fixed"
+      this.top = window.scrollY
+      document.body.style.position = 'fixed'
+      document.body.style.top = -this.top + 'px'
       this.isShow = true
     },
     hideShow() {
-      document.body.style.position = "initial"
+      document.body.style.position = 'static'
+      document.body.top = ''
       this.isShow = false
+      window.scrollTo(0, this.top)
     }
   }
 }

@@ -41,7 +41,7 @@
         <img :src="item.imgUrl" alt="">
       </div>
     </div>
-    <div class="bottom" v-if="bottomShow">
+    <div class="bottom" v-if="bottomShow" ref="bottom">
       <div class="footer-wrapper">
         <div class="fixed-content"> 
           <div class="footer-text">{{bottomText}}</div>
@@ -65,15 +65,15 @@ export default {
       currentIndex: 0,
       month: "9",
       headerImg: [
-        {imgUrl: 'https://yy-s.zuoyebang.cc/static/toufang/math-class-b/banner.jpg'}
+        {imgUrl: 'https://www.anyison.net/files//banner.jpg'}
       ], //header轮播图
       infoImg: [
-        {imgUrl: 'https://yy-s.zuoyebang.cc/static/toufang/math-class-b/three2.jpg'},
-        {imgUrl: 'https://yy-s.zuoyebang.cc/static/toufang/math-class-b/firstAdvantage.jpg'},
-        {imgUrl: 'https://yy-s.zuoyebang.cc/static/toufang/math-class-b/secondAdvantage.jpg'},
-        {imgUrl: 'https://yy-s.zuoyebang.cc/static/toufang/math-class-b/teacher.jpg'},
-        {imgUrl: 'https://yy-s.zuoyebang.cc/static/toufang/math-class-b/apply.jpg'},
-        {imgUrl: 'https://yy-s.zuoyebang.cc/static/toufang/math-class-b/question.jpg'}
+        {imgUrl: 'https://www.anyison.net/files//three2.jpg'},
+        {imgUrl: 'https://www.anyison.net/files//firstAdvantage.jpg'},
+        {imgUrl: 'https://www.anyison.net/files//secondAdvantage.jpg'},
+        {imgUrl: 'https://www.anyison.net/files//teacher.jpg'},
+        {imgUrl: 'https://www.anyison.net/files//apply.jpg'},
+        {imgUrl: 'https://www.anyison.net/files//question.jpg'}
       ],  //info图片
       grade: [
         {
@@ -162,7 +162,7 @@ export default {
   @import "~common/stylus/init"
     .banner-wrapper >>> img 
       width: 100%
-      height: 100%
+      height: 5.82rem
     .content >>> img
       width: 100%
       height: 100%
@@ -174,7 +174,7 @@ export default {
           margin: .1rem 0 .3rem
           width: 100%
           height: .84rem
-          background: url("https://yy-s.zuoyebang.cc/static/toufang/math-class-b/course-title.jpg")
+          background: url("https://www.anyison.net/files//course-title.jpg")
           background-size: 100% 100%
         .grade-list-wrap
           padding: 0
@@ -207,7 +207,7 @@ export default {
         width: 100%
         height: .84rem
         margin: .1rem 0 .3rem
-        background: url(https://yy-s.zuoyebang.cc/static/toufang/math-class-b/grade-title.jpg)
+        background: url(https://www.anyison.net/files//grade-title.jpg)
         background-size: 100% 100%
       .time-chooseing-wrapper >>> li
         position: relative
