@@ -1,8 +1,10 @@
 <template>
   <div id="app">
   <div ref="header">
+    <div ref="headerImages">
     <div class="banner-wrapper" v-for="(item,index) in headerImg" :key="index">
       <img :src=item.imgUrl alt="">
+    </div>
     </div>
     <div class="course-wrapper" ref="course">
       <section class="grade-chooseing-wrapper">
@@ -60,9 +62,9 @@ export default {
   name: 'app',
   data() {
     return {
-      bottomShow: false,
-      bottomText: '50元15节课',
-      currentIndex: 0,
+      bottomShow: false, //下方的按钮显示
+      bottomText: '50元15节课', 
+      currentIndex: 0, //当前的页面
       month: "9",
       headerImg: [
         {imgUrl: 'https://www.anyison.net/files//banner.jpg'}
@@ -123,23 +125,27 @@ export default {
             }
           ]
         }
-      ]
+      ]//api获取接口的数据
     }
   },
   methods: {
     handleClickItem(item,i) { //item : {class,classPlan: [classdate,classtime]}
       this.currentIndex = i
     },
-    handleClickPlan(plan) {
-      // alert(`你已成功购买${this.grade[this.currentIndex].class} ${plan.classdate} ${plan.classtime}的课程`)
+    /**
+     * params @plan plan是传入的实例
+     */
+    handleClickPlan() {
+      //此处应该传入plan
+      // console.log(`你已成功购买${this.grade[this.currentIndex].class} ${plan.classdate} ${plan.classtime}的课程`)
       this.$refs.confirm.show()
     },
     handleScroll() {
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       this.bottomShow = scrollTop > this.$refs.header.clientHeight ? true : false 
     },
     handlelogin() {
-      alert("点击报名!")
+      window.scrollTo(0, this.$refs.headerImages.clientHeight)
     }
   },
   computed: {
@@ -148,6 +154,9 @@ export default {
     }
   },
   mounted() {
+
+  },
+  beforeMount() {
     window.addEventListener('scroll', this.handleScroll,true)//添加scroll绑定事件
   },
   destroyed() {

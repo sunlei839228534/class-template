@@ -4,13 +4,16 @@
     <div class="dialog-content" @click.stop>
       <div class="dialog-title">注册/登录</div>
       <div class="dialog-body">
-        <form action="POST">
-          账号: <input type="text" style="border: 1px solid black">
+        <form action="" method="Post">
+          姓名: <input type="text" style="border: 1px solid black;margin-bottom: .3rem" placeholder="请输入姓名">
           <br>
-          密码: <input type="password" style="border: 1px solid black">
+          电话: <input type="password" style="border: 1px solid black" placeholder="请输入手机号">
         </form>
       </div>
       <div class="dialog-footer">
+        <div class="dialog-button">
+          立即注册
+        </div>
       </div>
     </div>
   </div>
@@ -26,7 +29,7 @@ export default {
   },
   methods: {
     show() {
-      this.top = window.scrollY
+      this.top = window.scrollY  
       document.body.style.position = 'fixed'
       document.body.style.top = -this.top + 'px'
       this.isShow = true
@@ -59,6 +62,7 @@ export default {
       top: 50%
       left: 50%
       height: 50%
+      margin: 0 auto
       width: 80%
       border-radius: 10%
       background: #ffffff
@@ -67,4 +71,26 @@ export default {
       justify-content: center
       align-items: center
       z-index: 300
+      .dialog-title
+        font-size: .48rem
+        position: absolute
+        top: 20%
+        display: inline-block
+        width: 100%
+        text-align: center
+        line-height: .48rem
+      .dialog-footer
+        display: flex
+        .dialog-button
+          align-items: center
+          justify-content: center
+          text-align: center
+          margin-top: .48rem
+          font-size: .4rem
+          line-height: .4rem
+          width: 4.4rem
+          height: .4rem
+          border-radius: 3rem
+          color: #ffffff
+          background: linear-gradient(90deg,#fc267b,#f51b73)
 </style>
