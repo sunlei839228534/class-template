@@ -81,7 +81,7 @@ export default {
         height: .25rem
         right: .3rem
         top: .3rem
-        background: url(https://www.anyison.net/files//close-text.jpg)
+        background: url(https://www.anyison.net/files/close-text.jpg)
         background-size: 100% 100%
       .dialog-wrapper
         position: absolute

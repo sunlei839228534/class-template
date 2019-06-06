@@ -67,15 +67,15 @@ export default {
       currentIndex: 0, //当前的页面
       month: "9",
       headerImg: [
-        {imgUrl: 'https://www.anyison.net/files//banner.jpg'}
+        {imgUrl: 'https://www.anyison.net/files/banner.jpg'}
       ], //header轮播图
       infoImg: [
-        {imgUrl: 'https://www.anyison.net/files//three2.jpg'},
-        {imgUrl: 'https://www.anyison.net/files//firstAdvantage.jpg'},
-        {imgUrl: 'https://www.anyison.net/files//secondAdvantage.jpg'},
-        {imgUrl: 'https://www.anyison.net/files//teacher.jpg'},
-        {imgUrl: 'https://www.anyison.net/files//apply.jpg'},
-        {imgUrl: 'https://www.anyison.net/files//question.jpg'}
+        {imgUrl: 'https://www.anyison.net/files/three2.jpg'},
+        {imgUrl: 'https://www.anyison.net/files/firstAdvantage.jpg'},
+        {imgUrl: 'https://www.anyison.net/files/secondAdvantage.jpg'},
+        {imgUrl: 'https://www.anyison.net/files/teacher.jpg'},
+        {imgUrl: 'https://www.anyison.net/files/apply.jpg'},
+        {imgUrl: 'https://www.anyison.net/files/question.jpg'}
       ],  //info图片
       grade: [
         {
@@ -183,7 +183,7 @@ export default {
           margin: .1rem 0 .3rem
           width: 100%
           height: .84rem
-          background: url("https://www.anyison.net/files//course-title.jpg")
+          background: url("https://www.anyison.net/files/course-title.jpg")
           background-size: 100% 100%
         .grade-list-wrap
           padding: 0
@@ -216,7 +216,7 @@ export default {
         width: 100%
         height: .84rem
         margin: .1rem 0 .3rem
-        background: url(https://www.anyison.net/files//grade-title.jpg)
+        background: url(https://www.anyison.net/files/grade-title.jpg)
         background-size: 100% 100%
       .time-chooseing-wrapper >>> li
         position: relative
