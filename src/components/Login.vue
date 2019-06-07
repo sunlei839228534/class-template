@@ -7,9 +7,10 @@
         <div class="dialog-title">注册/登录</div>
         <div class="dialog-body">
           <form action="" method="Post">
-            <input class="dialog-input" type="text" placeholder="请输入姓名">
-            <br>
-            <input class="dialog-input" type="password" placeholder="请输入手机号">
+              <input class="dialog-input" type="text" placeholder="请输入姓名">
+              <i class="icon-name"></i>
+              <input class="dialog-input" type="password" placeholder="请输入手机号">
+              <i class="icon-phone"></i>
           </form>
         </div>
         <div class="dialog-footer">
@@ -93,16 +94,20 @@ export default {
           .dialog-input
             background: #f8f8f8
             height: .8rem
-            border: none 
+            border: none
             font-size: .24rem
             padding: 0 .78rem
             border-radius: .08rem
+      .dialog-footer
+        display: flex
+        align-items: center
         .dialog-button
           width: 4rem
           height: .8rem
+          margin: 0 auto
           background: linear-gradient(90deg,#fc267b,#f51b73)
           margin-top: .2rem
-          border-radius: .5rem
+          border-radius: .35rem
           .dialog-button-text
             font-size: .3rem
             color: #ffffff
