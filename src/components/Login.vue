@@ -7,10 +7,14 @@
         <div class="dialog-title">注册/登录</div>
         <div class="dialog-body">
           <form action="" method="Post">
-              <input class="dialog-input" type="text" placeholder="请输入姓名">
-              <i class="icon-name"></i>
-              <input class="dialog-input" type="password" placeholder="请输入手机号">
-              <i class="icon-phone"></i>
+            <div class="dialog-body-input-wrapper">
+              <span class="dialog-icon-user"></span>
+              <input class="dialog-body-input" type="text" placeholder="请输入您的姓名">
+            </div>
+            <div class="dialog-body-input-wrapper">
+              <span class="dialog-icon-phone"></span>
+              <input class="dialog-body-input" type="text" placeholder="请输入您的手机号">
+            </div>
           </form>
         </div>
         <div class="dialog-footer">
@@ -91,13 +95,28 @@ export default {
         .dialog-title
           margin-bottom: .2rem
         .dialog-body
-          .dialog-input
-            background: #f8f8f8
-            height: .8rem
-            border: none
-            font-size: .24rem
-            padding: 0 .78rem
-            border-radius: .08rem
+          .dialog-body-input-wrapper
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 4rem
+            height: .4rem
+            margin-bottom: .2rem
+            .dialog-icon-user
+              display: inline-block
+              width: .4rem
+              height: .4rem
+              background: url(../assets/icons/yonghu.png) no-repeat
+              background-size: 100% 100%
+            .dialog-icon-phone
+              display: inline-block
+              width: .4rem
+              height: .4rem
+              background: url(../assets/icons/shoujihao.png) no-repeat
+              background-size: 100% 100%
+            .dialog-body-input
+              height: .4rem
+              padding-left: .1rem
       .dialog-footer
         display: flex
         align-items: center
